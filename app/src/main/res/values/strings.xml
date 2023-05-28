@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">GoodsApp</string>
+    <string name="scan_good">Сканировать продукт</string>
+    <string name="production_date">Дата производства</string>
+    <string name="good_name">Название продукта</string>
+    <string name="expiration_date">Дата окончания срока годности</string>
+    <string name="apply">Подтвердить</string>
 </resources>

@@ -5,6 +5,8 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -16,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GoodsApp"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        android:hardwareAccelerated="true">
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -29,7 +32,18 @@
         <activity android:name=".ScanActivity"
             android:exported="true"
             android:label="Сканируем код">
-
+            <intent-filter>
+                <action android:name="ru.adepteXiao.goodsapp.ACTION_SCAN"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AddParamActivity"
+            android:exported="true"
+            android:label="Задаем параметры товара">
+            <intent-filter>
+                <action android:name="ru.adepteXiao.goodsapp.ACTION_ADD_PARAMS"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
     </application>
 
