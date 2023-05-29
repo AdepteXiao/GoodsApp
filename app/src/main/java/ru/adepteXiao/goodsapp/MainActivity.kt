@@ -1,21 +1,23 @@
 package ru.adepteXiao.goodsapp
 
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.Toast
 import ru.adepteXiao.goodsapp.databinding.ActivityMainBinding
+import ru.adepteXiao.goodsapp.models.dbModel.DatabaseModelFactory
+import ru.adepteXiao.goodsapp.models.dbModel.DbModel
+import androidx.activity.viewModels
 
 
 class MainActivity : AppCompatActivity() {
 
+    private val dbModel: DbModel by viewModels  {
+        DatabaseModelFactory(
+            (application as GoodsApp).database.goodDao()
+        )
+    }
 
     private lateinit var binding: ActivityMainBinding
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
