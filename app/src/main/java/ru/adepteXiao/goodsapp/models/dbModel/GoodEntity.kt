@@ -6,6 +6,14 @@ import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
 import ru.adepteXiao.goodsapp.models.Converters
 
+/**
+ * Сущность, представляющая товар в базе данных.
+ *
+ * @property barcode Штрих-код товара.
+ * @property goodName Наименование товара.
+ * @property fromDate Дата начала срока годности товара.
+ * @property toDate Дата окончания срока годности товара.
+ */
 @Entity(tableName = "goods")
 data class GoodEntity(
     @PrimaryKey(autoGenerate = false)
